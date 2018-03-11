@@ -51,3 +51,15 @@ def f(a):
         
     return c
 
+
+a = nd.random_normal(shape=3)
+
+a.attach_grad()
+
+with ag.record():
+
+  c = f(a)
+
+c.backward()
+
+a.grad
